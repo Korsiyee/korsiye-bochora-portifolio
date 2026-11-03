@@ -17,7 +17,7 @@ const Certificates = () => {
       tags: ['React', 'Node.js', 'Express', 'MongoDB'],
       icon: '💻',
       color: 'blue',
-      link: '#'
+      link: '/assets/Full-Stack-Web-Development.jpg'
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const Certificates = () => {
       tags: ['AWS', 'Artificial Intelligence', 'Cloud'],
       icon: '☁️',
       color: 'orange',
-      link: '#'
+      link: '/assets/AWS-Certificate.jpg'
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ const Certificates = () => {
       tags: ['Leadership', 'Teamwork'],
       icon: '🏆',
       color: 'purple',
-      link: '#'
+      link: '/assets/Leadership-Certificate.jpg'
     }
   ];
 
