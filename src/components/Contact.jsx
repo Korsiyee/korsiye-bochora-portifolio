@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect } from 'react'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { useLanguage } from '../LanguageContext'
 import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 const Contact = () => {
+  const { t } = useLanguage()
   const form = useRef()
   const [formData, setFormData] = useState({
     name: '',
@@ -71,35 +73,34 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">{t('contactTitle')}</h2>
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Let's Work Together</h3>
+            <h3>{t('contactHeading')}</h3>
             <p>
-              I'm always interested in hearing about new projects and opportunities. Whether you have 
-              a question or just want to say hi, feel free to reach out!
+              {t('contactDescription')}
             </p>
             
             <div className="contact-details">
               <div className="contact-item">
                 <FaEnvelope className="contact-icon" />
                 <div>
-                  <h4>Email</h4>
+                  <h4>{t('email')}</h4>
                   <a href="mailto:bkorsiye@gmail.com">bkorsiye@gmail.com</a>
                 </div>
               </div>
               <div className="contact-item">
                 <FaPhone className="contact-icon" />
                 <div>
-                  <h4>Phone</h4>
+                  <h4>{t('phone')}</h4>
                   <a href="tel:+251972891671">+251 97 289 1671</a>
                 </div>
               </div>
               <div className="contact-item">
                 <FaMapMarkerAlt className="contact-icon" />
                 <div>
-                  <h4>Location</h4>
-                  <p>Haramaya, Ethiopia</p>
+                  <h4>{t('location')}</h4>
+                  <p>{t('locationValue')}</p>
                 </div>
               </div>
             </div>
@@ -116,7 +117,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="from_name"
-                placeholder="Your Name"
+                placeholder={t('yourName')}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -127,7 +128,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="from_email"
-                placeholder="Your Email"
+                placeholder={t('yourEmail')}
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -138,7 +139,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder={t('subject')}
                 value={formData.subject}
                 onChange={handleChange}
                 required
@@ -149,7 +150,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 rows="5"
-                placeholder="Your Message"
+                placeholder={t('yourMessage')}
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -157,7 +158,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary" disabled={sending}>
-              {sending ? 'Sending...' : 'Send Message'}
+              {sending ? 'Sending...' : t('sendMessage')}
             </button>
           </form>
         </div>

@@ -20,10 +20,24 @@ const Navbar = ({ activeSection, theme, toggleTheme }) => {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsOpen(false)
+    if (sectionId === 'achievements') {
+      // Scroll to certificates section and switch to achievements tab
+      const element = document.getElementById('certificates')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        // Trigger the achievements tab click after scrolling
+        setTimeout(() => {
+          const achievementsTab = document.querySelector('.tab-button:nth-child(2)')
+          if (achievementsTab) achievementsTab.click()
+        }, 500)
+        setIsOpen(false)
+      }
+    } else {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        setIsOpen(false)
+      }
     }
   }
 
@@ -39,11 +53,11 @@ const Navbar = ({ activeSection, theme, toggleTheme }) => {
         </a>
         
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          {['home', 'about', 'skills', 'projects', 'certificates', 'contact'].map((section) => (
+          {['home', 'about', 'skills', 'projects', 'certificates', 'achievements', 'contact'].map((section) => (
             <li key={section}>
               <a
-                href={`#${section}`}
-                className={`nav-link ${activeSection === section ? 'active' : ''}`}
+                href={`#${section === 'achievements' ? 'certificates' : section}`}
+                className={`nav-link ${activeSection === section || (section === 'achievements' && activeSection === 'certificates') ? 'active' : ''}`}
                 onClick={(e) => {
                   e.preventDefault()
                   scrollToSection(section)

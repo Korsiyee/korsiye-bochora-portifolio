@@ -6,6 +6,7 @@ export const translations = {
     skills: "Skills",
     projects: "Projects",
     certificates: "Certificates",
+    achievements: "Achievements",
     contact: "Contact",
 
     // Hero Section
@@ -101,6 +102,7 @@ export const translations = {
     skills: "Dandeettii",
     projects: "Pirojektoota",
     certificates: "Ragaalee",
+    achievements: "Injifannoo",
     contact: "Na Quunnamaa",
 
     // Hero Section
@@ -196,6 +198,7 @@ export const translations = {
     skills: "ክህሎቶች",
     projects: "ፕሮጀክቶች",
     certificates: "ሰርተፊኬቶች",
+    achievements: "ስኬቶች",
     contact: "ያግኙኝ",
 
     // Hero Section
