@@ -96,7 +96,30 @@
 }
 
 @media (max-width: 768px) {
+  .skills {
+    padding: 80px 40px;
+  }
+  
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .skill-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 60px 20px;
+  }
+  
+  .skill-category {
+    padding: 2rem;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.4rem;
   }
 }

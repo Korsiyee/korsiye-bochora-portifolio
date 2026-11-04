@@ -98,3 +98,48 @@
   font-size: 1.05rem;
   padding: 1rem 2.5rem;
 }
+
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 40px;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .about-info {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .info-item {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 60px 20px;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .info-icon {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+  
+  .info-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .cv-download .btn {
+    width: 100%;
+  }
+}
